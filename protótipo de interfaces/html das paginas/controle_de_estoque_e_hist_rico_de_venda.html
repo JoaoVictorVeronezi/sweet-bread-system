@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Controle de Estoque e Histórico de venda</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Controle de Estoque e Histórico de venda;
+		--web-view-id: Controle_de_Estoque_e_Hist_rico_de_venda;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Controle_de_Estoque_e_Hist_rico_de_venda;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Controle_de_Estoque_e_Hist_rico_de_venda {
+		position: absolute;
+		box-sizing: border-box;
+		background: #E5E5E5;
+		width: 1920px;
+		height: 1080px;
+		background-color: rgba(35,57,91,1);
+		overflow: hidden;
+		--web-view-name: Controle de Estoque e Histórico de venda;
+		--web-view-id: Controle_de_Estoque_e_Hist_rico_de_venda;
+		--web-enable-deep-linking: true;
+	}
+	.Ret_ngulo_28 {
+		position: absolute;
+		overflow: visible;
+		width: 1769px;
+		height: 726px;
+		left: 76px;
+		top: 223px;
+	}
+	.Ret_ngulo_29 {
+		position: absolute;
+		overflow: visible;
+		width: 171px;
+		height: 95px;
+		left: 391px;
+		top: 222px;
+	}
+	.Ret_ngulo_30 {
+		position: absolute;
+		overflow: visible;
+		width: 327px;
+		height: 95px;
+		left: 562px;
+		top: 222px;
+	}
+	.Ret_ngulo_32 {
+		position: absolute;
+		overflow: visible;
+		width: 256px;
+		height: 95px;
+		left: 889px;
+		top: 222px;
+	}
+	.Ret_ngulo_33 {
+		position: absolute;
+		overflow: visible;
+		width: 439px;
+		height: 723px;
+		left: 1408px;
+		top: 225px;
+	}
+	.Ret_ngulo_34 {
+		position: absolute;
+		overflow: visible;
+		width: 261px;
+		height: 95px;
+		left: 1145px;
+		top: 222px;
+	}
+	.Ret_ngulo_35 {
+		position: absolute;
+		overflow: visible;
+		width: 441px;
+		height: 95px;
+		left: 1406px;
+		top: 222px;
+	}
+	#Hora {
+		position: absolute;
+		left: 434px;
+		top: 248px;
+		overflow: visible;
+		width: 87px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Transa__o {
+		position: absolute;
+		left: 586px;
+		top: 251px;
+		overflow: visible;
+		width: 189px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Valor_total {
+		position: absolute;
+		left: 942px;
+		top: 251px;
+		overflow: visible;
+		width: 179px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Quantidade {
+		position: absolute;
+		left: 1160px;
+		top: 248px;
+		overflow: visible;
+		width: 207px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Estoque {
+		position: absolute;
+		left: 1662px;
+		top: 251px;
+		overflow: visible;
+		width: 147px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	.Linha_14 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 717px;
+		left: 562.5px;
+		top: 231.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#ID12_30 {
+		position: absolute;
+		left: 427px;
+		top: 344px;
+		overflow: visible;
+		width: 101px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Venda {
+		position: absolute;
+		left: 598px;
+		top: 346px;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	.Linha_16 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 699px;
+		left: 889.5px;
+		top: 248.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Linha_17 {
+		overflow: visible;
+		position: absolute;
+		width: 2px;
+		height: 701.001px;
+		left: 1145.5px;
+		top: 239.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_18 {
+		overflow: visible;
+		position: absolute;
+		width: 1771px;
+		height: 1px;
+		left: 76px;
+		top: 407.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_19 {
+		overflow: visible;
+		position: absolute;
+		width: 1771px;
+		height: 1px;
+		left: 76px;
+		top: 495.22px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_20 {
+		overflow: visible;
+		position: absolute;
+		width: 1003.248px;
+		height: 1px;
+		left: 830.367px;
+		top: 407.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_23 {
+		overflow: visible;
+		position: absolute;
+		width: 1453.5px;
+		height: 1px;
+		left: 393.5px;
+		top: 947.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_24 {
+		overflow: visible;
+		position: absolute;
+		width: 1769px;
+		height: 1px;
+		left: 76px;
+		top: 598px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_25 {
+		overflow: visible;
+		position: absolute;
+		width: 1771px;
+		height: 1px;
+		left: 76px;
+		top: 677.286px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_26 {
+		overflow: visible;
+		position: absolute;
+		width: 1451.5px;
+		height: 1px;
+		left: 393.5px;
+		top: 767.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_27 {
+		overflow: visible;
+		position: absolute;
+		width: 1771px;
+		height: 1px;
+		left: 76px;
+		top: 859.352px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#ID09_30 {
+		position: absolute;
+		left: 427px;
+		top: 427px;
+		overflow: visible;
+		width: 101px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID15_30 {
+		position: absolute;
+		left: 427px;
+		top: 524px;
+		overflow: visible;
+		width: 101px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID20_30 {
+		position: absolute;
+		left: 427px;
+		top: 607px;
+		overflow: visible;
+		width: 101px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID10_25 {
+		position: absolute;
+		left: 427px;
+		top: 704px;
+		overflow: visible;
+		width: 101px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID07_48 {
+		position: absolute;
+		left: 427px;
+		top: 794px;
+		overflow: visible;
+		width: 101px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID08_00 {
+		position: absolute;
+		left: 427px;
+		top: 877px;
+		overflow: visible;
+		width: 101px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Venda_A6_Text_14 {
+		position: absolute;
+		left: 598px;
+		top: 877px;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Venda_A6_Text_15 {
+		position: absolute;
+		left: 598px;
+		top: 796px;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Venda_A6_Text_16 {
+		position: absolute;
+		left: 598px;
+		top: 695px;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Venda_A6_Text_17 {
+		position: absolute;
+		left: 598px;
+		top: 616px;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Ajuste_de_Estoque {
+		position: absolute;
+		left: 566px;
+		top: 518px;
+		overflow: visible;
+		width: 325px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#Venda_A6_Text_19 {
+		position: absolute;
+		left: 598px;
+		top: 436px;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#R__10_00 {
+		position: absolute;
+		left: 983px;
+		top: 607px;
+		overflow: visible;
+		width: 163px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#R__10_00_A6_Text_21 {
+		position: absolute;
+		left: 983px;
+		top: 787px;
+		overflow: visible;
+		width: 163px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	.Ret_ngulo_36 {
+		position: absolute;
+		overflow: visible;
+		width: 335px;
+		height: 95px;
+		left: 76px;
+		top: 223px;
+	}
+	#Data {
+		position: absolute;
+		left: 203px;
+		top: 251px;
+		overflow: visible;
+		width: 85px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	.Linha_19 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 700px;
+		left: 411.5px;
+		top: 248.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_31 {
+		overflow: visible;
+		position: absolute;
+		width: 1345px;
+		height: 1px;
+		left: 76px;
+		top: 767.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Caminho_33 {
+		overflow: visible;
+		position: absolute;
+		width: 1378px;
+		height: 1px;
+		left: 76px;
+		top: 947.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#ID26_10_2019 {
+		position: absolute;
+		left: 144px;
+		top: 344px;
+		overflow: visible;
+		width: 201px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID26_10_2019_A6_Text_24 {
+		position: absolute;
+		left: 145px;
+		top: 785px;
+		overflow: visible;
+		width: 201px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID26_10_2019_A6_Text_25 {
+		position: absolute;
+		left: 145px;
+		top: 699px;
+		overflow: visible;
+		width: 201px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID26_10_2019_A6_Text_26 {
+		position: absolute;
+		left: 145px;
+		top: 618px;
+		overflow: visible;
+		width: 201px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID26_10_2019_A6_Text_27 {
+		position: absolute;
+		left: 145px;
+		top: 517px;
+		overflow: visible;
+		width: 201px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID26_10_2019_A6_Text_28 {
+		position: absolute;
+		left: 145px;
+		top: 436px;
+		overflow: visible;
+		width: 201px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID26_10_2019_A6_Text_29 {
+		position: absolute;
+		left: 145px;
+		top: 879px;
+		overflow: visible;
+		width: 201px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#_1 {
+		position: absolute;
+		left: 1324px;
+		top: 346px;
+		overflow: visible;
+		width: 37px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#_1_A6_Text_31 {
+		position: absolute;
+		left: 1330px;
+		top: 436px;
+		overflow: visible;
+		width: 37px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#_1_A6_Text_32 {
+		position: absolute;
+		left: 1330px;
+		top: 616px;
+		overflow: visible;
+		width: 37px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#_1_A6_Text_33 {
+		position: absolute;
+		left: 1330px;
+		top: 695px;
+		overflow: visible;
+		width: 37px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#_1_A6_Text_34 {
+		position: absolute;
+		left: 1330px;
+		top: 770px;
+		overflow: visible;
+		width: 37px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#_1_A6_Text_35 {
+		position: absolute;
+		left: 1330px;
+		top: 877px;
+		overflow: visible;
+		width: 37px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID33 {
+		position: absolute;
+		left: 1326px;
+		top: 526px;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID20 {
+		position: absolute;
+		left: 1735px;
+		top: 877px;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID19 {
+		position: absolute;
+		left: 1735px;
+		top: 787px;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID18 {
+		position: absolute;
+		left: 1735px;
+		top: 704px;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID17 {
+		position: absolute;
+		left: 1735px;
+		top: 614px;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID50 {
+		position: absolute;
+		left: 1735px;
+		top: 524px;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID49 {
+		position: absolute;
+		left: 1735px;
+		top: 434px;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#ID48 {
+		position: absolute;
+		left: 1735px;
+		top: 337px;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#R__10_00_A6_Text_44 {
+		position: absolute;
+		left: 983px;
+		top: 704px;
+		overflow: visible;
+		width: 163px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#R__10_00_A6_Text_45 {
+		position: absolute;
+		left: 983px;
+		top: 879px;
+		overflow: visible;
+		width: 163px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#R__10_00_A6_Text_46 {
+		position: absolute;
+		left: 983px;
+		top: 339px;
+		overflow: visible;
+		width: 163px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#R__10_00_A6_Text_47 {
+		position: absolute;
+		left: 983px;
+		top: 427px;
+		overflow: visible;
+		width: 163px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(0,0,0,1);
+	}
+	#DEL_VALE_MAIS_200ML {
+		position: absolute;
+		left: 76px;
+		top: 103px;
+		overflow: visible;
+		width: 431px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(255,255,255,1);
+	}
+	#Voltar {
+		position: absolute;
+		left: 58px;
+		top: 998px;
+		overflow: visible;
+		width: 104px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(254,254,254,1);
+		text-decoration: true;
+	}
+</style>
+</head>
+<body>
+<div id="Controle_de_Estoque_e_Hist_rico_de_venda" class="">
+	<svg class="Ret_ngulo_28">
+		<rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Ret_ngulo_28" rx="0" ry="0" x="0" y="0" width="1769" height="726">
+		</rect>
+	</svg>
+	<svg class="Ret_ngulo_29">
+		<rect fill="rgba(223,223,223,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Ret_ngulo_29" rx="0" ry="0" x="0" y="0" width="171" height="95">
+		</rect>
+	</svg>
+	<svg class="Ret_ngulo_30">
+		<rect fill="rgba(223,223,223,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Ret_ngulo_30" rx="0" ry="0" x="0" y="0" width="327" height="95">
+		</rect>
+	</svg>
+	<svg class="Ret_ngulo_32">
+		<rect fill="rgba(223,223,223,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Ret_ngulo_32" rx="0" ry="0" x="0" y="0" width="256" height="95">
+		</rect>
+	</svg>
+	<svg class="Ret_ngulo_33">
+		<rect fill="rgba(245,245,245,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Ret_ngulo_33" rx="0" ry="0" x="0" y="0" width="439" height="723">
+		</rect>
+	</svg>
+	<svg class="Ret_ngulo_34">
+		<rect fill="rgba(223,223,223,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Ret_ngulo_34" rx="0" ry="0" x="0" y="0" width="261" height="95">
+		</rect>
+	</svg>
+	<svg class="Ret_ngulo_35">
+		<rect fill="rgba(223,223,223,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Ret_ngulo_35" rx="0" ry="0" x="0" y="0" width="441" height="95">
+		</rect>
+	</svg>
+	<div id="Hora">
+		<span>Hora</span>
+	</div>
+	<div id="Transa__o">
+		<span>Transação</span>
+	</div>
+	<div id="Valor_total">
+		<span>Valor total</span>
+	</div>
+	<div id="Quantidade">
+		<span>Quantidade</span>
+	</div>
+	<div id="Estoque">
+		<span>Estoque</span>
+	</div>
+	<svg class="Linha_14" viewBox="0 0 1 717">
+		<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Linha_14" d="M 0 0 L 0 717">
+		</path>
+	</svg>
+	<div id="ID12_30">
+		<span>12:30</span>
+	</div>
+	<div id="Venda">
+		<span>Venda</span>
+	</div>
+	<svg class="Linha_16" viewBox="0 0 1 699">
+		<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Linha_16" d="M 0 0 L 0 699">
+		</path>
+	</svg>
+	<svg class="Linha_17" viewBox="0 0 1 701">
+		<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Linha_17" d="M 1 0 L 0 701">
+		</path>
+	</svg>
+	<svg class="Caminho_18" viewBox="0 0 1771 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_18" d="M 0 0 C 0 0 317.36181640625 0 760.11181640625 0 C 1202.86181640625 0 1771 0 1771 0">
+		</path>
+	</svg>
+	<svg class="Caminho_19" viewBox="0 7.742 1771 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_19" d="M 0 7.741943359375 C 0 7.741943359375 317.36181640625 7.741943359375 760.11181640625 7.741943359375 C 1202.86181640625 7.741943359375 1771 7.741943359375 1771 7.741943359375">
+		</path>
+	</svg>
+	<svg class="Caminho_20" viewBox="754.367 0 1003.248 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_20" d="M 754.36669921875 0 C 1193.770263671875 0 1757.6142578125 0 1757.6142578125 0">
+		</path>
+	</svg>
+	<svg class="Caminho_23" viewBox="0 0 1453.5 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_23" d="M 0 0 C 0 0 260.466064453125 0 623.841064453125 0 C 987.2160034179688 0 1453.5 0 1453.5 0">
+		</path>
+	</svg>
+	<svg class="Caminho_24" viewBox="0 10.5 1769 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_24" d="M 0 10.5 C 0 10.5 317.00341796875 10.5 759.25341796875 10.5 C 1201.50341796875 10.5 1769 10.5 1769 10.5">
+		</path>
+	</svg>
+	<svg class="Caminho_25" viewBox="0 0 1771 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_25" d="M 0 0 C 0 0 317.36181640625 0 760.11181640625 0 C 1202.86181640625 0 1771 0 1771 0">
+		</path>
+	</svg>
+	<svg class="Caminho_26" viewBox="0 0 1451.5 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_26" d="M 0 0 C 0 0 260.107666015625 0 622.982666015625 0 C 985.857666015625 0 1451.5 0 1451.5 0">
+		</path>
+	</svg>
+	<svg class="Caminho_27" viewBox="0 7.283 1771 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_27" d="M 0 7.28265380859375 C 0 7.28265380859375 317.36181640625 7.28265380859375 760.11181640625 7.28265380859375 C 1202.86181640625 7.28265380859375 1771 7.28265380859375 1771 7.28265380859375">
+		</path>
+	</svg>
+	<div id="ID09_30">
+		<span>09:30</span>
+	</div>
+	<div id="ID15_30">
+		<span>15:30</span>
+	</div>
+	<div id="ID20_30">
+		<span>20:30</span>
+	</div>
+	<div id="ID10_25">
+		<span>10:25</span>
+	</div>
+	<div id="ID07_48">
+		<span>07:48</span>
+	</div>
+	<div id="ID08_00">
+		<span>08:00</span>
+	</div>
+	<div id="Venda_A6_Text_14">
+		<span>Venda</span>
+	</div>
+	<div id="Venda_A6_Text_15">
+		<span>Venda</span>
+	</div>
+	<div id="Venda_A6_Text_16">
+		<span>Venda</span>
+	</div>
+	<div id="Venda_A6_Text_17">
+		<span>Venda</span>
+	</div>
+	<div id="Ajuste_de_Estoque">
+		<span>Ajuste de Estoque</span>
+	</div>
+	<div id="Venda_A6_Text_19">
+		<span>Venda</span>
+	</div>
+	<div id="R__10_00">
+		<span>R$ 10,00</span>
+	</div>
+	<div id="R__10_00_A6_Text_21">
+		<span>R$ 10,00</span>
+	</div>
+	<svg class="Ret_ngulo_36">
+		<rect fill="rgba(223,223,223,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Ret_ngulo_36" rx="0" ry="0" x="0" y="0" width="335" height="95">
+		</rect>
+	</svg>
+	<div id="Data">
+		<span>Data</span>
+	</div>
+	<svg class="Linha_19" viewBox="0 0 1 700">
+		<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Linha_19" d="M 0 0 L 0 700">
+		</path>
+	</svg>
+	<svg class="Caminho_31" viewBox="0 0 1345 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_31" d="M 0 0 C 0 0 241.02294921875 0 577.27294921875 0 C 913.5228881835938 0 1345 0 1345 0">
+		</path>
+	</svg>
+	<svg class="Caminho_33" viewBox="0 17.142 1378 1">
+		<path fill="rgba(6,6,6,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Caminho_33" d="M 0 17.1417236328125 C 0 17.1417236328125 246.9365234375 17.1417236328125 591.4365234375 17.1417236328125 C 935.9364624023438 17.1417236328125 1378 17.1417236328125 1378 17.1417236328125">
+		</path>
+	</svg>
+	<div id="ID26_10_2019">
+		<span>26/10/2019</span>
+	</div>
+	<div id="ID26_10_2019_A6_Text_24">
+		<span>26/10/2019</span>
+	</div>
+	<div id="ID26_10_2019_A6_Text_25">
+		<span>26/10/2019</span>
+	</div>
+	<div id="ID26_10_2019_A6_Text_26">
+		<span>26/10/2019</span>
+	</div>
+	<div id="ID26_10_2019_A6_Text_27">
+		<span>26/10/2019</span>
+	</div>
+	<div id="ID26_10_2019_A6_Text_28">
+		<span>26/10/2019</span>
+	</div>
+	<div id="ID26_10_2019_A6_Text_29">
+		<span>26/10/2019</span>
+	</div>
+	<div id="_1">
+		<span>-1</span>
+	</div>
+	<div id="_1_A6_Text_31">
+		<span>-1</span>
+	</div>
+	<div id="_1_A6_Text_32">
+		<span>-1</span>
+	</div>
+	<div id="_1_A6_Text_33">
+		<span>-1</span>
+	</div>
+	<div id="_1_A6_Text_34">
+		<span>-1</span>
+	</div>
+	<div id="_1_A6_Text_35">
+		<span>-1</span>
+	</div>
+	<div id="ID33">
+		<span>33</span>
+	</div>
+	<div id="ID20">
+		<span>20</span>
+	</div>
+	<div id="ID19">
+		<span>19</span>
+	</div>
+	<div id="ID18">
+		<span>18</span>
+	</div>
+	<div id="ID17">
+		<span>17</span>
+	</div>
+	<div id="ID50">
+		<span>50</span>
+	</div>
+	<div id="ID49">
+		<span>49</span>
+	</div>
+	<div id="ID48">
+		<span>48</span>
+	</div>
+	<div id="R__10_00_A6_Text_44">
+		<span>R$ 10,00</span>
+	</div>
+	<div id="R__10_00_A6_Text_45">
+		<span>R$ 10,00</span>
+	</div>
+	<div id="R__10_00_A6_Text_46">
+		<span>R$ 10,00</span>
+	</div>
+	<div id="R__10_00_A6_Text_47">
+		<span>R$ 10,00</span>
+	</div>
+	<div id="DEL_VALE_MAIS_200ML">
+		<span>DEL VALE MAIS 200ML</span>
+	</div>
+	<div id="Voltar">
+		<span>Voltar</span>
+	</div>
+</div>
+</body>
+</html>
