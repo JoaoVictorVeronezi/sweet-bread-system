@@ -1,11 +1,13 @@
 <?php
-    include("validacao.php");
+    include("validacao.php");//Arquivo de validacao de campos
+    include("conexao.php");//Arquivo para conexao com o banco de dados
+    
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title> Entrada de dados</title>
+        <title>Entrada de dados</title>
         <style>
         .error {color: #FF0000;}
         </style>    
