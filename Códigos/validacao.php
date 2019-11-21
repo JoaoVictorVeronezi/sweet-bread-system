@@ -1,4 +1,6 @@
 <?php
+//validação, ainda não está funcionando pois não sei como posso por para funcionar
+// tendo em vista que preciso executar alguma ação dpois disso
 $nomeErr = $cargoErr = $cpfErr = $loginErr = $senhaErr = "";
 $nome = $cargo = $cpf = $login = $senha = "";
 
