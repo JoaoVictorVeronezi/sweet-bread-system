@@ -45,7 +45,7 @@ $grupo = selectAllFuncionario();
                     </td>
                     <td>
                         <form name="excluir" action="conexao.php" method="POST">
-                            <input type="hidden" name="id" value="<?= $funcionario["id"] ?>" />
+                            <input type="hidden" name="id" value=<?= $funcionario["id"] ?> />
                             <input type="hidden" name="acao" value="excluir" />
                             <input type="submit" value="Excluir" name="excluir" />
                         </form>

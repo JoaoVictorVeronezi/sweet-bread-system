@@ -19,10 +19,10 @@ if(isset($_POST["acao"])) {
         inserirFuncionario();
     }
     if($_POST["acao"]=="alterar") {
-        alterarPessoa();
+        alterarFuncionario();
     }
     if($_POST["acao"]=="excluir") {
-        excluirPessoa();
+        excluirFuncionario();
     }
 }
 
@@ -47,9 +47,18 @@ function alterarFuncionario() {
     voltarIndex();
 }
 
+function excluirFuncionario() {
+    $banco = connectDB();
+    $sql = "DELETE FROM funcionario WHERE id='{$_POST["id"]}'";
+
+    $banco->query($sql);
+    $banco->close();
+    voltarIndex();
+}
+
 function selectIdFuncionario($id) {
     $banco = connectDB();
-    $sql = "SELECT * FROM fuincionarios WHERE id =".$id;
+    $sql = "SELECT * FROM funcionarios WHERE id =".$id;
     $resultado = $banco->query($sql);
     $pessoa = mysqli_fetch_assoc($resultado);
     return $pessoa;
