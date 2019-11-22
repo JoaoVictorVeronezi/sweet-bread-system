@@ -1,4 +1,1 @@
-<?php
-    print("Olá mundo!");
-
-?>
+Ola mundo 
