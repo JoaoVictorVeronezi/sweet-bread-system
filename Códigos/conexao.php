@@ -49,7 +49,7 @@ function alterarFuncionario() {
 
 function excluirFuncionario() {
     $banco = connectDB();
-    $sql = "DELETE FROM funcionario WHERE id='{$_POST["id"]}'";
+    $sql = "DELETE FROM funcionarios WHERE id='{$_POST["id"]}'";
 
     $banco->query($sql);
     $banco->close();
