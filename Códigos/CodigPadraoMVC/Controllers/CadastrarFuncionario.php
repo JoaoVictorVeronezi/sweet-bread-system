@@ -16,7 +16,7 @@ $conexao = $conexao->getConnection();
 $f = new Funcionario($nome, $cargo, $cpf, $login, $senha);
  
 $funcionariodao = new FuncionarioDAO();
-$funcionariodao->salvar($f);
+$funcionariodao->salvar($f, $conexao);
 
 
 /*

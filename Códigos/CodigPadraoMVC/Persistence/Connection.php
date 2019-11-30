@@ -17,6 +17,7 @@ class Connection {
         if(!$this->connectDB) {
             die("conexao falhou" . $connectDB->connect_error);
         }
+        return $this->connectDB;
     }
 }
 

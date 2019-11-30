@@ -4,7 +4,7 @@ class FuncionarioDAO {
    
     function __construct() { }
 
-    function salvar($funcionario) {
+    function salvar($funcionario, $connect) {
         $sql = "INSERT INTO funcionarios(nome, cargo, cpf, login, senha) VALUES ('" .
                 $funcionario->getNome() . "','" .
                 $funcionario->getCargo() . "','" .
@@ -14,15 +14,13 @@ class FuncionarioDAO {
         
         
         echo "<br>" . $sql;
-
-        /*
-        if ($conexao->query($sql)) {
+        
+        if ($connect->query($sql)) {
             echo "funcionario salvo";
         }else {
-            echo "erro" . $connectDB->error;
-        }       */
+            echo "Fim" . $connect->error;
+        }       
     }
-
 }
 
 ?>
