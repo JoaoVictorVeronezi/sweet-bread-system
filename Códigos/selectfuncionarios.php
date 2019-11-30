@@ -57,7 +57,7 @@ $grupo = selectAllFuncionario();
     </table>
     <br>
 
-    <a href="cadastrar.php">Cadastrar Novos Funcionarios</a>
+    <a href="cadastrar.html">Cadastrar Novos Funcionarios</a>
     <?php
     function formatoData($data)
     {

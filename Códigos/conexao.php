@@ -4,7 +4,7 @@
 function connectDB() {
     // essa funcao conecta com o banco de dados, levando nosso IP = localhost, nosso login = root, 
     // não possuimos senha, e o nome da tabela = projeto_engenharia;
-    $conexao = new mysqli("localhost", "root", "", "projeto_engenharia");
+    $conexao = new mysqli("localhost", "root", "", "bd_test");
     return $conexao;
 }
 
