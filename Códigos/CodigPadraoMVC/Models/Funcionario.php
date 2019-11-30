@@ -1,24 +1,36 @@
 <?php
 
 class Funcionario {
-
+    //atributos da classe funcionario
     private $nome;
     private $cargo;
     private $cpf;
     private $login;
     private $senha;
 
-    function construct(){}
+    //Construtor que recebe como parametro os valores dos atributos
+    function construct($vnome, $vcargo, $vcpf, $vlogin, $vsenha) {
+        $this->nome = $vnome;
+        $this->cargo = $vcargo;
+        $this->cpf = $vcpf;
+        $this->login = $vlogin;
+        $this->senha = $vsenha;
+    }
 
-    //Funcao responsável pela conexao direta com o banco.
-    function getConnectDB() {
-        if ($this->connectDB == NULL) {
-            $this->connectDB = mysqli_connect($this->servername,$this->username,$this->password,$this->bd);
-        }
-        if (!$this->connectDB) {
-            echo "Erro com o banco de dados". $connectDB->connect_erro;
-            exit;
-        }
+    function getNome() {
+        return $this->nome;
+    }
+    function getCargo() {
+        return $this->cargo;
+    }
+    function getCpf() {
+        return $this->cpf;
+    }
+    function getLogin() {
+        return $this->login;
+    }
+    function getSenha() {
+        return $this->senha;
     }
 }
 ?>
