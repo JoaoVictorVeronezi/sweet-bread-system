@@ -9,7 +9,7 @@ class Funcionario {
     private $senha;
 
     //Construtor que recebe como parametro os valores dos atributos
-    function construct($vnome, $vcargo, $vcpf, $vlogin, $vsenha) {
+    function __construct($vnome, $vcargo, $vcpf, $vlogin, $vsenha) {
         $this->nome = $vnome;
         $this->cargo = $vcargo;
         $this->cpf = $vcpf;

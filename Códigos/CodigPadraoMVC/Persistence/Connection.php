@@ -6,20 +6,18 @@ class Connection {
     private $username = "root";
     private $password = "";
     private $bd = "bd_test";
-    private $connectDB = NULL;
+    private $connectDB = null;
     
-    //Construtor
-    function construct(){}
+    function __contruct(){ }
 
-    //Funcao responsável pela conexao direta com o banco.
-    function getConnectDB() {
-        if ($this->connectDB == NULL) {
+    function getConnection() {
+        if ($this->connectDB == null) {
             $this->connectDB = mysqli_connect($this->servername,$this->username,$this->password,$this->bd);
         }
-        if (!$this->connectDB) {
-            echo "Erro com o banco de dados". $connectDB->connect_erro;
-            exit;
+        if(!$this->connectDB) {
+            die("conexao falhou" . $connectDB->connect_error);
         }
     }
 }
+
 ?>
