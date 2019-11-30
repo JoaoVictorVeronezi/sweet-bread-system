@@ -1,5 +1,4 @@
 <?php
-
 include_once '../Persistence/Connection.php';
 include_once '../Models/Funcionario.php';
 include_once '../Persistence/FuncionarioDAO.php';
@@ -16,14 +15,6 @@ $conexao = $conexao->getConnection();
 $f = new Funcionario($nome, $cargo, $cpf, $login, $senha);
  
 $funcionariodao = new FuncionarioDAO();
-$funcionariodao->salvar($f, $conexao);
-
-
-/*
-        if ($conexao->query($sql)) {
-            echo "funcionario salvo";
-        }else {
-            echo "erro" . $connectDB->error;
-        }  */
+$funcionariodao->SalvarFuncionario($f, $conexao);
 
 ?>
