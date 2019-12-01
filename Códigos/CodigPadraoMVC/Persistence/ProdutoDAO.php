@@ -15,7 +15,7 @@ class ProdutoDAO {
         if ($connect->query($sql)) {
             echo "Produto Cadastrado Com Sucesso";
         }else {
-            echo "ERRO" . $connect->error;
+            
         }       
     }
     /*
