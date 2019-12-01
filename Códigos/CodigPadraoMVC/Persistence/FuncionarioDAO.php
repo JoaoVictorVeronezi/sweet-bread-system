@@ -25,9 +25,13 @@ class FuncionarioDAO {
     }
     function DeletarFuncionario($cpf, $connect) {
         //função não totalmente pronta
-        $sql = "DELETE FROM `funcionarios` WHERE cpf=".$cpf;
-        $res = $connect->query($sql);
-        return $res;
+        $sql = "DELETE FROM funcionarios WHERE cpf=".$cpf;
+        
+        if ($connect->query($sql) === TRUE) {
+            echo "<script> alert('Funcionário removido!')</script>";
+        } else {
+            echo "Erro na remoção: " . $connect->error;
+        }
     }
     function ConsultarFuncionario($cpf, $connect) {
         $sql = "SELECT nome, cpf, cargo FROM funcionarios WHERE cpf=".$cpf;
