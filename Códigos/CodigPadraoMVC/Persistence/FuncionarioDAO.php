@@ -38,6 +38,16 @@ class FuncionarioDAO {
         $res = $connect->query($sql);
         return $res;
     }
+    function AlterarFuncionario($funcionario, $connect) {
+        $sql = " UPDATE funcionarios SET nome='" . 
+        $funcionario->getNome() . "' ,cpf='" . 
+        $funcionario->getCpf() . "',cargo='" . 
+        $funcionario->getCargo() ."' WHERE cpf=". 
+        $funcionario->getCpf();
+        $res = $connect->query($sql);
+        return $res;
+    }
+    
 }
 
 ?>
