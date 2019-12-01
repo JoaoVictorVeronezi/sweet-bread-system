@@ -12,13 +12,10 @@ class FuncionarioDAO {
                 $funcionario->getLogin() . "','" .
                 $funcionario->getSenha() . "'" . ")";
         
-        
-        echo "<br>" . $sql;
-        
         if ($connect->query($sql)) {
-            echo "funcionario salvo";
+            echo "Funcionario Cadastrado Com Sucesso";
         }else {
-            echo "Fim" . $connect->error;
+            echo "ERRO" . $connect->error;
         }       
     }
     function ConsultarTodosFuncionarios($connect) {
@@ -26,10 +23,17 @@ class FuncionarioDAO {
         $resultado = $connect->query($sql);
         return $resultado;
     }
-    function DeletarFuncionario() {
-
+    function DeletarFuncionario($cpf, $connect) {
+        //função não totalmente pronta
+        $sql = "DELETE FROM `funcionarios` WHERE cpf=".$cpf;
+        $res = $connect->query($sql);
+        return $res;
     }
-
+    function ConsultarFuncionario($cpf, $connect) {
+        $sql = "SELECT nome, cpf, cargo FROM funcionarios WHERE cpf=".$cpf;
+        $res = $connect->query($sql);
+        return $res;
+    }
 }
 
 ?>
