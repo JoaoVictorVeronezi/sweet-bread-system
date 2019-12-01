@@ -45,6 +45,7 @@ class FuncionarioDAO {
         $funcionario->getCargo() ."' WHERE cpf=". 
         $funcionario->getCpf();
         $res = $connect->query($sql);
+        
         return $res;
     }
     
