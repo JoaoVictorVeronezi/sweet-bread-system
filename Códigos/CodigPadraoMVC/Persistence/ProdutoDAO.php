@@ -15,18 +15,20 @@ class ProdutoDAO {
         if ($connect->query($sql)) {
             echo "Produto Cadastrado Com Sucesso";
         }else {
-            
+            echo "ERRO" . $connect->error;
         }       
     }
-    /*
-    function ConsultarTodosFuncionarios($connect) {
-        $sql = "SELECT id, nome, cpf, cargo, login, senha FROM funcionarios ";
+    
+    function ConsultarTodosProdutos($connect) {
+        $sql = "SELECT id, nome, marca, quantidade, preco FROM produtos ";
         $resultado = $connect->query($sql);
         return $resultado;
     }
-    function DeletarFuncionario($cpf, $connect) {
+    
+    
+    function DeletarProduto($id, $connect) {
         //função não totalmente pronta
-        $sql = "DELETE FROM funcionarios WHERE cpf=".$cpf;
+        $sql = "DELETE FROM produtos WHERE id=".$id;
         
         if ($connect->query($sql) === TRUE) {
             echo "<script> alert('Funcionário removido!')</script>";
@@ -34,21 +36,21 @@ class ProdutoDAO {
             echo "Erro na remoção: " . $connect->error;
         }
     }
-    function ConsultarFuncionario($cpf, $connect) {
-        $sql = "SELECT nome, cpf, cargo FROM funcionarios WHERE cpf=".$cpf;
+    function ConsultarProduto($id, $connect) {
+        $sql = "SELECT nome, marca, quantidade, preco FROM produtos WHERE id=".$id;
         $res = $connect->query($sql);
         return $res;
     }
-    function AlterarFuncionario($funcionario, $connect) {
+    function AlterarProduto($produto, $connect) {
         $sql = " UPDATE funcionarios SET nome='" . 
-        $funcionario->getNome() . "' ,cpf='" . 
-        $funcionario->getCpf() . "',cargo='" . 
-        $funcionario->getCargo() ."' WHERE cpf=". 
-        $funcionario->getCpf();
+        $produto->getNome() . "' ,id='" . 
+        $produto->getID() . "',quantidade='" . 
+        $produto->getQuantidade() ."' WHERE preco=". 
+        $produto->getPreco();
         $res = $connect->query($sql);
         
         return $res;
-    }*/
+    }
     
 }
 
