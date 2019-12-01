@@ -32,7 +32,7 @@ class ProdutoDAO {
     function DeletarProduto($id, $connect) {
         $sql ="DELETE FROM produtos WHERE id=".$id;
         if ($connect->query($sql) === TRUE) {
-            echo "<script> alert('Funcionário removido!')</script>";
+            echo "<script> alert('Produto removido!')</script>";
         } else {
             echo "Erro na remoção: " . $connect->error;
         }
