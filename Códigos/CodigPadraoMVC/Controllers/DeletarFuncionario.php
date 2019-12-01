@@ -24,8 +24,12 @@ echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Consultar e Deleta
         <input type='hidden' value='inserir'/>
         <input type='submit' value='Deletar' name='cadastrar'/>
 </form>
+<a href='../index.html'>Voltar Para o Menu Principal</a>
 </body>
 </html>";
+
+}else {
+    echo "erro";
 }
 
 ?>

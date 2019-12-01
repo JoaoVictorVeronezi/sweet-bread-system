@@ -45,7 +45,7 @@ if ($resultado->num_rows > 0) {
                "<td>" . $registro['cpf'] ."</td>";
           echo "</tr>";
       }
-      echo "</table></body></html>";
+      echo "</table><br><br><br><a href='../index.html'>Voltar Para o Menu Principal</a></body></html>";
 }else {
     echo "<script> alert('CPF NAO ENCONTRADO!')</script>";
 }
