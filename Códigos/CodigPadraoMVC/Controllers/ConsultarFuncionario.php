@@ -37,21 +37,17 @@ if ($resultado->num_rows > 0) {
                   <th>Nome</th>
                   <th>Cargo</th>
                   <th>CPF</th>
-                  <th>Excluir</th>
-                  <th>Alterar</th>
                 </tr>";
       while ($registro = $resultado->fetch_assoc() ) {
           echo "<tr>";
           echo "<td>" . $registro['nome'] . "</td>" .
                "<td>" . $registro['cargo'] . "</td>" . 
-               "<td>" . $registro['cpf'] ."</td>" .
-               "<td>". " <input type='submit' value='Excluir' name='excluir' />"  . "</td>" . 
-               "<td>". " <input type='submit' value='Alterar' name='alterar' />"  . "</td>"; 
+               "<td>" . $registro['cpf'] ."</td>";
           echo "</tr>";
       }
       echo "</table></body></html>";
 }else {
-    echo "<script>alert('CPF NAO ENCONTRADO!')</script>";
+    echo "<script> alert('CPF NAO ENCONTRADO!')</script>";
 }
 
 ?>
