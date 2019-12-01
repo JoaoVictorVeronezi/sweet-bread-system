@@ -45,11 +45,13 @@ if ($resultado->num_rows > 0) {
           echo "<td>" . $registro['nome'] . "</td>" .
                "<td>" . $registro['cargo'] . "</td>" . 
                "<td>" . $registro['cpf'] ."</td>" .
-               "<td>". " <input type='submit' value='Excluir' name='editar' />"  . "</td>" . 
-               "<td>". " <input type='submit' value='Alterar' name='editar' />"  . "</td>"; 
+               "<td>". " <input type='submit' value='Excluir' name='excluir' />"  . "</td>" . 
+               "<td>". " <input type='submit' value='Alterar' name='alterar' />"  . "</td>"; 
           echo "</tr>";
       }
       echo "</table></body></html>";
+}else {
+    echo "<script>alert('CPF NAO ENCONTRADO!')</script>";
 }
 
 ?>
