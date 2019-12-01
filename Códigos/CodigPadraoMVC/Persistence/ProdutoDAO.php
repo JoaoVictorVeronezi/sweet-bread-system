@@ -24,22 +24,18 @@ class ProdutoDAO {
         $resultado = $connect->query($sql);
         return $resultado;
     }
-    
-    
+    function ConsultarProduto($id, $connect) {
+        $sql = "SELECT id, nome, marca, quantidade, preco FROM produtos WHERE id=".$id;
+        $res = $connect->query($sql);
+        return $res;
+    }
     function DeletarProduto($id, $connect) {
-        //função não totalmente pronta
-        $sql = "DELETE FROM produtos WHERE id=".$id;
-        
+        $sql ="DELETE FROM produtos WHERE id=".$id;
         if ($connect->query($sql) === TRUE) {
             echo "<script> alert('Funcionário removido!')</script>";
         } else {
             echo "Erro na remoção: " . $connect->error;
         }
-    }
-    function ConsultarProduto($id, $connect) {
-        $sql = "SELECT id, nome, marca, quantidade, preco FROM produtos WHERE id=".$id;
-        $res = $connect->query($sql);
-        return $res;
     }
     function AlterarProduto($produto, $connect) {
         $sql = " UPDATE produtos SET nome='" . 
