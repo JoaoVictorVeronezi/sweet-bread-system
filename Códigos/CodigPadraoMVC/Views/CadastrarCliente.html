@@ -1,0 +1,28 @@
+<!-- 
+    Pagina destinada ao cadastro de Clientes;
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Entrada de dados</title>   
+    </head>
+<body>
+    <!--Inicio do nosso formulario -->
+    <h1>Formulario de cadastro de clientes</h1>
+    <form action="../Controllers/CadastrarCliente.php" method="POST">
+        CPF: <input type="text" placeholder="Somente Numeros" name="clicpf">
+        <br><br>
+        Nome: <input type="text" placeholder="Nome do cliente" name="clinome">
+        <br><br>
+        Telefone: <input type="text" placeholder="DDD+9+NUMERO (somente numeros)" name="clitel">
+        <br><br>
+        E-Mail: <input type="text" placeholder="Email do cliente" name="cliemail">
+        <br><br>
+            <input type="hidden" value="inserir"/>
+            <input type="submit" value="Cadastrar" name="cadastrar"/>
+    </form>
+    <br><br><br><a href='../index.html'>Voltar Para o Menu Principal</a>
+</body>
+
+</html>
