@@ -17,15 +17,14 @@ class ClienteDAO {
             echo "ERRO" . $connect->error;
         }       
     }
-    /*
-    function ConsultarTodosFuncionarios($connect) {
-        $sql = "SELECT id, nome, cpf, cargo, login, senha FROM funcionarios ";
+    function ConsultarTodosClientes($connect) {
+        $sql = "SELECT cpf, nome, telefone, email FROM clientes";
         $resultado = $connect->query($sql);
         return $resultado;
     }
-    function DeletarFuncionario($cpf, $connect) {
-        //função não totalmente pronta
-        $sql = "DELETE FROM funcionarios WHERE cpf=".$cpf;
+    function DeletarCliente($cpf, $connect) {
+    
+        $sql = "DELETE FROM clientes WHERE cpf=".$cpf;
         
         if ($connect->query($sql) === TRUE) {
             echo "<script> alert('Funcionário removido!')</script>";
@@ -33,21 +32,22 @@ class ClienteDAO {
             echo "Erro na remoção: " . $connect->error;
         }
     }
-    function ConsultarFuncionario($cpf, $connect) {
-        $sql = "SELECT nome, cpf, cargo FROM funcionarios WHERE cpf=".$cpf;
+    function ConsultarCliente($cpf, $connect) {
+        $sql = "SELECT cpf, nome, telefone, email FROM clientes WHERE cpf=".$cpf;
         $res = $connect->query($sql);
         return $res;
     }
-    function AlterarFuncionario($funcionario, $connect) {
-        $sql = " UPDATE funcionarios SET nome='" . 
-        $funcionario->getNome() . "' ,cpf='" . 
-        $funcionario->getCpf() . "',cargo='" . 
-        $funcionario->getCargo() ."' WHERE cpf=". 
-        $funcionario->getCpf();
+    function AlterarCliente($cliente, $connect) {
+        $sql = " UPDATE clientes SET nome='" . 
+        $cliente->getNome() . "' ,cpf='" . 
+        $cliente->getCpf() . "',email='" . 
+        $cliente->getTelefone() . "',telefone='" . 
+        $cliente->getEmail() ."' WHERE cpf=". 
+        $cliente->getCpf();
         $res = $connect->query($sql);
         
         return $res;
-    }*/
+    }
     
 }
 
