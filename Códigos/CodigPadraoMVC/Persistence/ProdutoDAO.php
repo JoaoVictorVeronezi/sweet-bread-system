@@ -37,16 +37,16 @@ class ProdutoDAO {
         }
     }
     function ConsultarProduto($id, $connect) {
-        $sql = "SELECT nome, marca, quantidade, preco FROM produtos WHERE id=".$id;
+        $sql = "SELECT id, nome, marca, quantidade, preco FROM produtos WHERE id=".$id;
         $res = $connect->query($sql);
         return $res;
     }
     function AlterarProduto($produto, $connect) {
-        $sql = " UPDATE funcionarios SET nome='" . 
-        $produto->getNome() . "' ,id='" . 
-        $produto->getID() . "',quantidade='" . 
-        $produto->getQuantidade() ."' WHERE preco=". 
-        $produto->getPreco();
+        $sql = " UPDATE produtos SET nome='" . 
+        $produto->getNome() . "' ,marca='" . 
+        $produto->getMarca() . "',preco='" . 
+        $produto->getPreco() ."' WHERE id=". 
+        $produto->getID();
         $res = $connect->query($sql);
         
         return $res;

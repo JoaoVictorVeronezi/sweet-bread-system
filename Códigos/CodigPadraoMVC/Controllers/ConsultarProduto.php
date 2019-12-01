@@ -49,7 +49,7 @@ if ($resultado->num_rows > 0) {
       }
       echo "</table><br><br><br><a href='../index.html'>Voltar Para o Menu Principal</a></body></html>";
 }else {
-    echo "<script> alert('CPF NAO ENCONTRADO!')</script>";
+    echo "<script> alert('PRODUTO NAO ENCONTRADO!')</script>";
 }
 
 ?>
