@@ -35,6 +35,7 @@ if ($resultado->num_rows > 0) {
            <body>
            <table>
               <tr>
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Cargo</th>
                 <th>CPF</th>
@@ -42,7 +43,8 @@ if ($resultado->num_rows > 0) {
               </tr>";
     while ($registro = $resultado->fetch_assoc() ) {
         echo "<tr>";
-        echo "<td>" . $registro['nome'] . "</td>" .
+        echo "<td>" . $registro['id'] . "</td>" .
+             "<td>" . $registro['nome'] . "</td>" .
              "<td>" . $registro['cargo'] . "</td>" . 
              "<td>" . $registro['cpf'] ."</td>" .
              "<td>" . $registro['login'] . "</td>";
