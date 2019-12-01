@@ -9,7 +9,7 @@ class Produto {
     private $preco;
 
     //Construtor que recebe como parametro os valores dos atributos
-    function __construct($pid, $pnome, $pmarca, $pquanti, $$ppreco) {
+    function __construct($pid, $pnome, $pmarca, $pquanti, $ppreco) {
         $this->id = $pid;
         $this->nome = $pnome;
         $this->marca = $pmarca;

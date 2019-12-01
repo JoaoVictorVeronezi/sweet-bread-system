@@ -1,0 +1,30 @@
+<!-- 
+    Pagina destinada ao cadastro de produtos;
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Entrada de dados</title>   
+    </head>
+<body>
+    <!--Inicio do nosso formulario -->
+    <h1>Formulario de cadastro de produtos</h1>
+    <form action="../Controllers/CadastrarProduto.php" method="POST">
+        ID: <input type="text" placeholder="ID do produto" name="prid">
+        <br><br>
+        Nome: <input type="text" placeholder="Nome do produto" name="prnome">
+        <br><br>
+        Marca: <input type="text" placeholder="Marca do Produto" name="prmarca">
+        <br><br>
+        Quantidade: <input type="text" placeholder="Quantidade do produto" name="prquanti">
+        <br><br>
+        Preço: <input type="text" placeholder="Preço do produto" name="prpreco" >
+        <br><br> 
+            <input type="hidden" value="inserir"/>
+            <input type="submit" value="Cadastrar" name="cadastrar"/>
+    </form>
+    <br><br><br><a href='../index.html'>Voltar Para o Menu Principal</a>
+</body>
+
+</html>
