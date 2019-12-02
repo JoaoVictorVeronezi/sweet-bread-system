@@ -2,16 +2,18 @@
 include_once '../Persistence/Connection.php';
 include_once '../Persistence/FuncionarioDAO.php';
 
-
+//variavel para pegar valor do cpf
 $cpf =  $_POST['fucpf'];
 
+
+//conexao com o banco
 $conexao = new Connection();
 $conexao = $conexao->getConnection();
 
-
+//nova instancia do funcionario
 $funcionariodao = new FuncionarioDAO();
 $res = $funcionariodao->ConsultarFuncionario($cpf, $conexao);
-//controller passivo de mudança
+
 
 if ($res->num_rows > 0) {
     $registro = $res->fetch_assoc();
