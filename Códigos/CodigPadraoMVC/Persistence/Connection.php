@@ -5,7 +5,7 @@ class Connection {
     private $servername = "localhost";
     private $username = "root";
     private $password = "";
-    private $bd = "projeto_engenharia";
+    private $bd = "db_teste";
     private $connectDB = null;
     
     function __contruct(){ }
