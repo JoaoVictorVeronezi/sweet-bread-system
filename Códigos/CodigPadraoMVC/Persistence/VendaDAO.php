@@ -3,15 +3,7 @@
 class VendaDAO {
     //fazendo dessa maneira, entretanto, posso chamar na model produto um metódo que ja faça essa
     //decrementação
-
-    function RealizarVenda($i, $connect) {
-
-    }
     
-    //funcao para cadastrar a venda com o cpf do vendedor, ou seu id
-    function CadastrarVenda($idvendedor) {
-
-    }
     function canBuy($idprod, $qntProd, $connect) {
         //selecionar a qualidade para ver se ha a quantidade necessria
         $query = " SELECT quantidade FROM produtos WHERE id=".$idprod;
@@ -20,7 +12,8 @@ class VendaDAO {
             return false;
         }
         return true;
-    }// no controller , caso o returno seja false, retornar erro: falta de estoque
+    }
+    // no controller , caso o returno seja false, retornar erro: falta de estoque
     
     function atualizarQtdProduto($idProd, $qntProd, $connect) {
         $sql = " UPDATE produtos SET quantidade= quantidade - $qntProd WHERE id=".$idProd;
@@ -35,7 +28,7 @@ class VendaDAO {
         if ($connect->query($sql)) {
             return true;
         }
-        
+        return false;
     }
 }
 
