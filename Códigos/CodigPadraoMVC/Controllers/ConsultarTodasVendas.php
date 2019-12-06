@@ -11,15 +11,13 @@ $conexao = $conexao->getConnection();
 $venda = new VendaDAO();
 
 //Chamando função pra consultar todos funcionarios
-$resultado = $venda->ConsultarTodasVendas($conexao);
+$resultado = $venda->ConsultarTodosProdutos($conexao);
 
-while($registro = $resultado->fetch_assoc()) {
-    echo $registro['nome'];
-}
+$resultado2 = $venda->ConsultarNomeFuncionario($conexao);
 
+$resultado3 = $venda->ConsultarNomeCliente($conexao);
+$resultado4 = $venda->ConsultarQuantidade($conexao);
 
-
-/*
 if ($resultado->num_rows > 0) {
     echo "<html>
           <head>
@@ -42,21 +40,23 @@ if ($resultado->num_rows > 0) {
            <body>
            <table>
               <tr>
-                <th>ID</th>
                 <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Vendedor</th>
                 <th>Cliente</th>
               </tr>";
-    while ($registro = $resultado->fetch_assoc()) {
+    while ($registro = $resultado->fetch_assoc() and 
+    $registroFuncionario = $resultado2->fetch_assoc() and 
+    $registroCliente= $resultado3->fetch_assoc() and
+    $registroQnt = $resultado4->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $registro['idvend'] . "</td>" .
-             "<td>" . $registro['idproduto'] . "</td>" .
-             "<td>" . $registro['qntprod'] . "</td>" . 
-             "<td>" . $registro['idvendedor'] ."</td>" .
-             "<td>" . $registro['idcliente'] . "</td>";
+        echo 
+             "<td>" . $registro['nome'] . "</td>" .
+             "<td>" . $registroQnt['qntprod'] . "</td>" . 
+             "<td>" . $registroFuncionario['nome'] ."</td>" .
+             "<td>" . $registroCliente['nome'] . "</td>";
         echo "</tr>";
     }
     echo "</table><br><br><br><a href='../index.html'>Voltar Para o Menu Principal</a></body></html>";
-}*/
+}
 ?>

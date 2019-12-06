@@ -23,7 +23,6 @@ class VendaDAO {
     }
     //salvar venda só salva, caso exista funcionario, cliente e um produto.
     function salvarVenda($idProd, $qntProd, $idVendedor, $idCliente,$connect) {
-        
         $sql = "INSERT INTO vendas (idproduto, qntprod, idvendedor, idcliente) VALUES ($idProd, $qntProd, $idVendedor, $idCliente)";
         if ($connect->query($sql)) {
             return true;
@@ -31,11 +30,27 @@ class VendaDAO {
         return false;
     }
 
-    function ConsultarTodasVendas($connect) {
-        $sql = " SELECT  nome FROM produtos INNER JOIN vendas ON produtos.id=vendas.idproduto";
+    function ConsultarTodosProdutos($connect) {
+        $sql = " SELECT nome FROM produtos INNER JOIN vendas ON produtos.id=vendas.idproduto";
         $resultado = $connect->query($sql);
         return $resultado;
     }
+    function ConsultarNomeFuncionario($connect) {
+        $sql = " SELECT nome FROM funcionarios INNER JOIN vendas ON funcionarios.cpf=vendas.idvendedor";
+        $resultado = $connect->query($sql);
+        return $resultado;
+    }
+    function ConsultarNomeCliente($connect) {
+        $sql = " SELECT nome FROM clientes INNER JOIN vendas ON clientes.cpf=vendas.idcliente";
+        $resultado = $connect->query($sql);
+        return $resultado;
+    }
+    function ConsultarQuantidade($connect) {
+        $sql = "SELECT qntprod FROM vendas";
+        $resultado = $connect->query($sql);
+        return $resultado;
+    }
+
 }
 
 ?>
