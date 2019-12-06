@@ -8,6 +8,8 @@ Nosso projeto, é um simples sistema para gerenciamento comercial (em especial pa
 
 ## Funcionalidades
 
+
+
 Nesse sistema temos: 
 -PDV (Caixa) completo;
 -Cadastro de Produtos;
