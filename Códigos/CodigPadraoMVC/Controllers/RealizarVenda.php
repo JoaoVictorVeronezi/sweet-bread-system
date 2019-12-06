@@ -15,6 +15,7 @@ $v = new Venda($idVend, $idProd, $qntProd, $idCliente);
 
 $venda = new VendaDAO();
 
+
 if ($venda->canBuy($idProd, $qntProd, $conexao)) {
     $venda->atualizarQtdProduto($v->getidproduto(),$v->getqntproduto(), $conexao);
     $venda->salvarVenda($v->getidproduto(),$v->getqntproduto(),$v->getidvendedor(),$v->getidCliente(), $conexao);

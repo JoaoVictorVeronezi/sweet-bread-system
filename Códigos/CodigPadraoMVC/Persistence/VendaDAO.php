@@ -1,9 +1,7 @@
 <?php
 
 class VendaDAO {
-    //fazendo dessa maneira, entretanto, posso chamar na model produto um metódo que ja faça essa
-    //decrementação
-    
+
     function canBuy($idprod, $qntProd, $connect) {
         //selecionar a qualidade para ver se ha a quantidade necessria
         $query = " SELECT quantidade FROM produtos WHERE id=".$idprod;
@@ -23,15 +21,21 @@ class VendaDAO {
         }
         return false;
     }
-
+    //salvar venda só salva, caso exista funcionario, cliente e um produto.
     function salvarVenda($idProd, $qntProd, $idVendedor, $idCliente,$connect) {
+        
         $sql = "INSERT INTO vendas (idproduto, qntprod, idvendedor, idcliente) VALUES ($idProd, $qntProd, $idVendedor, $idCliente)";
         if ($connect->query($sql)) {
             return true;
         }
         return false;
     }
-}
 
+    function ConsultarTodasVendas($connect) {
+        $sql = " SELECT  nome FROM produtos INNER JOIN vendas ON produtos.id=vendas.idproduto";
+        $resultado = $connect->query($sql);
+        return $resultado;
+    }
+}
 
 ?>

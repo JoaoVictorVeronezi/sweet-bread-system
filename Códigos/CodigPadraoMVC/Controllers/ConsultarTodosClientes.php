@@ -13,7 +13,7 @@ $clientedao = new ClienteDAO();
 $resultado = $clientedao->ConsultarTodosClientes($conexao);
 
 if ($resultado->num_rows > 0) {
-  //Gambiarra
+  
     echo "<html>
           <head>
           <style>

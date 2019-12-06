@@ -1,16 +1,26 @@
 <?php
 //incluindo respectivas funções
 include_once '../Persistence/Connection.php';
-include_once '../Persistence/FuncionarioDAO.php';
+include_once '../Persistence/VendaDAO.php';
+
 //conectando com o banco
 $conexao = new Connection();
 $conexao = $conexao->getConnection();
-//Criando uma instancia da Classe FuncionarioDAO
-$funcionariodao = new FuncionarioDAO();
+
+//Criando uma instancia da Classe Venda
+$venda = new VendaDAO();
+
 //Chamando função pra consultar todos funcionarios
-$resultado = $funcionariodao->ConsultarTodosFuncionarios($conexao);
+$resultado = $venda->ConsultarTodasVendas($conexao);
+
+while($registro = $resultado->fetch_assoc()) {
+    echo $registro['nome'];
+}
+
+
+
+/*
 if ($resultado->num_rows > 0) {
-  //Gambiarra
     echo "<html>
           <head>
           <style>
@@ -32,20 +42,21 @@ if ($resultado->num_rows > 0) {
            <body>
            <table>
               <tr>
-                <th>Nome</th>
-                <th>Cargo</th>
-                <th>CPF</th>
-                <th>Login</th>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Vendedor</th>
+                <th>Cliente</th>
               </tr>";
-    while ($registro = $resultado->fetch_assoc() ) {
+    while ($registro = $resultado->fetch_assoc()) {
         echo "<tr>";
-        echo 
-             "<td>" . $registro['nome'] . "</td>" .
-             "<td>" . $registro['cargo'] . "</td>" . 
-             "<td>" . $registro['cpf'] ."</td>" .
-             "<td>" . $registro['login'] . "</td>";
+        echo "<td>" . $registro['idvend'] . "</td>" .
+             "<td>" . $registro['idproduto'] . "</td>" .
+             "<td>" . $registro['qntprod'] . "</td>" . 
+             "<td>" . $registro['idvendedor'] ."</td>" .
+             "<td>" . $registro['idcliente'] . "</td>";
         echo "</tr>";
     }
     echo "</table><br><br><br><a href='../index.html'>Voltar Para o Menu Principal</a></body></html>";
-}
+}*/
 ?>

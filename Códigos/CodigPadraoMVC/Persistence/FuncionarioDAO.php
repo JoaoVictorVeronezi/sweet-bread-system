@@ -19,7 +19,7 @@ class FuncionarioDAO {
         }       
     }
     function ConsultarTodosFuncionarios($connect) {
-        $sql = "SELECT id, nome, cpf, cargo, login, senha FROM funcionarios ";
+        $sql = "SELECT nome, cpf, cargo, login, senha FROM funcionarios ";
         $resultado = $connect->query($sql);
         return $resultado;
     }
