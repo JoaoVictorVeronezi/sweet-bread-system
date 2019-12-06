@@ -7,7 +7,8 @@ class VendaDAO {
     function canBuy($idprod, $qntProd, $connect) {
         //selecionar a qualidade para ver se ha a quantidade necessria
         $query = " SELECT quantidade FROM produtos WHERE id=".$idprod;
-        $quantidade = $connect->query($query);
+        $quantidade = $connect->query($query)->fetch_assoc()["quantidade"];
+        //var_dump($quantidade);
         if ($qntProd >= $quantidade) {
             return false;
         }
@@ -24,7 +25,7 @@ class VendaDAO {
     }
 
     function salvarVenda($idProd, $qntProd, $idVendedor, $idCliente,$connect) {
-        $sql = "INSERT INTO vendas (idprod, qntprod, idvendedor, idcliente) VALUES ($idProd, $qntProd, $idVendedor, $idCliente)";
+        $sql = "INSERT INTO vendas (idproduto, qntprod, idvendedor, idcliente) VALUES ($idProd, $qntProd, $idVendedor, $idCliente)";
         if ($connect->query($sql)) {
             return true;
         }
