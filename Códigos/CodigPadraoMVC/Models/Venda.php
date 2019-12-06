@@ -1,27 +1,29 @@
 <?php
 
 class Venda {
-    private $vendedor;
+    private $idvendedor;
     private $idproduto;
     private $qntproduto;
-    private $valor;
+    private $idCliente;
 
-
-    function __construct($vend, $id, $qntprod) {
-        $this->vendedor = $vend;
-        $this->idproduto = $id;
+    function __construct($idvend, $idprod, $qntprod, $idcli) {
+        $this->idvendedor = $idvend;
+        $this->idproduto = $idprod;
         $this->qntproduto= $qntprod;
+        $this->idCliente = $idcli;
     }
 
-
-    function getVendedor() {
-        return $this->vendedor;
+    function getidvendedor() {
+        return $this->idvendedor;
     }
-    function getIdProduto() {
+    function getidproduto() {
         return $this->idproduto;
     }
-    function getQntProduto() {
+    function getqntproduto() {
         return $this->qntproduto;
+    }
+    function getidCliente() {
+        return $this->idCliente;
     }
 }
 
