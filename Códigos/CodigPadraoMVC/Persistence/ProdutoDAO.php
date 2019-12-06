@@ -30,6 +30,9 @@ class ProdutoDAO {
         return $res;
     }
     function DeletarProduto($id, $connect) {
+        $venda = "DELETE FROM vendas WHERE idproduto=".$id;
+        $connect->query($venda); 
+
         $sql ="DELETE FROM produtos WHERE id=".$id;
         if ($connect->query($sql) === TRUE) {
             echo "<script> alert('Produto removido!')</script>";

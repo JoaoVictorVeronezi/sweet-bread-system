@@ -25,6 +25,9 @@ class FuncionarioDAO {
     }
     function DeletarFuncionario($cpf, $connect) {
         //função não totalmente pronta
+        $venda = "DELETE FROM vendas WHERE idvendedor=".$cpf;
+        $connect->query($venda);
+        
         $sql = "DELETE FROM funcionarios WHERE cpf=".$cpf;
         
         if ($connect->query($sql) === TRUE) {
@@ -32,6 +35,7 @@ class FuncionarioDAO {
         } else {
             echo "Erro na remoção: " . $connect->error;
         }
+
     }
     function ConsultarFuncionario($cpf, $connect) {
         $sql = "SELECT nome, cpf, cargo FROM funcionarios WHERE cpf=".$cpf;
