@@ -4,9 +4,9 @@ include_once '../Models/Produto.php';
 include_once '../Persistence/ProdutoDAO.php';
 
 $nome = $_POST['prnome'];
-$marca = $_POST['prmarca'];
 $quantidade = $_POST['prquanti'];
-$preco = $_POST['prpreco'];
+$vendedor = $_POST['vendedor'];
+$cliente = $_POST['cliente'];
 $id = $_POST['prid'];
 
 $conexao = new Connection();

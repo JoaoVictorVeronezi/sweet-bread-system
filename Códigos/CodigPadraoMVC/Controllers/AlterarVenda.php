@@ -28,8 +28,8 @@ echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Consultar e Deleta
 <form action='../Controllers/AlterarVendaDefinitivo.php' method='POST''>
     Nome: <input type='text' name='prnome' value='" . $registro['nome'] ."'><br><br>
     Quantidade: <input type='text'  name='prquanti'  value='" . $registroQnt['qntprod'] . "'> <br><br>
-    Vendedor: <input type='text'  name='prpreco'  value='" . $registroFuncionario['nome'] . "'> <br><br>
-    Cliente: <input type='text'  name='prpreco'  value='" . $registroCliente['nome'] . "'> <br><br>
+    Vendedor: <input type='text'  name='vendedor'  value='" . $registroFuncionario['nome'] . "'> <br><br>
+    Cliente: <input type='text'  name='cliente'  value='" . $registroCliente['nome'] . "'> <br><br>
         <input type='hidden' value='inserir'/>
         <input type='submit' value='Alterar' name='cadastrar'/>
 </form>
