@@ -51,6 +51,12 @@ class VendaDAO {
         return $resultado;
     }
 
+    function ConsultarProduto($id,$connect) {
+        $sql = " SELECT nome FROM produtos WHERE idproduto=".$id;
+        $resultado = $connect->query($sql);
+        return $resultado;
+    }
+
 }
 
 ?>
