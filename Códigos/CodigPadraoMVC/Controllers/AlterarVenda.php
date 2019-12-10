@@ -25,7 +25,7 @@ $registroQnt = $resultado4->fetch_assoc();
 
 echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Consultar e Deletar</title></head>
 <body><h1>Consultar e deletar</h1>
-<form action='../Controllers/AlterarProdutoDefinitivo.php' method='POST''>
+<form action='../Controllers/AlterarVendaDefinitivo.php' method='POST''>
     Nome: <input type='text' name='prnome' value='" . $registro['nome'] ."'><br><br>
     Quantidade: <input type='text'  name='prquanti'  value='" . $registroQnt['qntprod'] . "'> <br><br>
     Vendedor: <input type='text'  name='prpreco'  value='" . $registroFuncionario['nome'] . "'> <br><br>
