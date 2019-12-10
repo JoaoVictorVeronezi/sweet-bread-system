@@ -13,7 +13,6 @@ $venda = new VendaDAO();
 $res = $venda->ConsultarProduto($id, $conexao);
 
 $resultado2 = $venda->ConsultarNomeFuncionario($conexao);
-
 $resultado3 = $venda->ConsultarNomeCliente($conexao);
 $resultado4 = $venda->ConsultarQuantidade($conexao);
 
@@ -24,8 +23,9 @@ $registroCliente= $resultado3->fetch_assoc();
 $registroQnt = $resultado4->fetch_assoc();
 
 echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Consultar e Deletar</title></head>
-<body><h1>Consultar e deletar</h1>
+<body><h1>Consultar e Alterar</h1>
 <form action='../Controllers/AlterarVendaDefinitivo.php' method='POST''>
+    
     Nome: <input type='text' name='prnome' value='" . $registro['nome'] ."'><br><br>
     Quantidade: <input type='text'  name='prquanti'  value='" . $registroQnt['qntprod'] . "'> <br><br>
     Vendedor: <input type='text'  name='vendedor'  value='" . $registroFuncionario['nome'] . "'> <br><br>

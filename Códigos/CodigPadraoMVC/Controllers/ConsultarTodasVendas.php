@@ -15,6 +15,8 @@ $resultado = $venda->ConsultarTodosProdutos($conexao);
 
 $resultado2 = $venda->ConsultarNomeFuncionario($conexao);
 
+$resultID = $venda->ConsultarIDVenda($conexao);
+
 $resultado3 = $venda->ConsultarNomeCliente($conexao);
 $resultado4 = $venda->ConsultarQuantidade($conexao);
 
@@ -40,6 +42,7 @@ if ($resultado->num_rows > 0) {
            <body>
            <table>
               <tr>
+                <th>ID</th>
                 <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Vendedor</th>
@@ -48,9 +51,10 @@ if ($resultado->num_rows > 0) {
     while ($registro = $resultado->fetch_assoc() and 
     $registroFuncionario = $resultado2->fetch_assoc() and 
     $registroCliente= $resultado3->fetch_assoc() and
-    $registroQnt = $resultado4->fetch_assoc()) {
+    $registroQnt = $resultado4->fetch_assoc() and 
+    $registroID = $resultID->fetch_assoc()) {
         echo "<tr>";
-        echo 
+        echo "<td>" . $registroID['idvend'] . "</td>" .
              "<td>" . $registro['nome'] . "</td>" .
              "<td>" . $registroQnt['qntprod'] . "</td>" . 
              "<td>" . $registroFuncionario['nome'] ."</td>" .

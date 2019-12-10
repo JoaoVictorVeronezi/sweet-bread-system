@@ -50,11 +50,15 @@ class VendaDAO {
         $resultado = $connect->query($sql);
         return $resultado;
     }
-
-    function ConsultarProduto($id,$connect) {
-        $sql = " SELECT nome FROM produtos WHERE idproduto=".$id;
-        $resultado = $connect->query($sql);
-        return $resultado;
+    function ConsultarIDVenda($connect) {
+        $sql = "SELECT idvend FROM vendas";
+        $res = $connect->query($sql);
+        return $res;
+    }
+    function ConsultarProduto($id, $connect) {
+        $sql = "SELECT nome FROM produtos WHERE id=".$id;
+        $res = $connect->query($sql);
+        return $res;
     }
 
 }

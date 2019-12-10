@@ -7,7 +7,7 @@ $nome = $_POST['prnome'];
 $quantidade = $_POST['prquanti'];
 $vendedor = $_POST['vendedor'];
 $cliente = $_POST['cliente'];
-$id = $_POST['prid'];
+$id = $_POST['idvend'];
 
 $conexao = new Connection();
 $conexao = $conexao->getConnection();
