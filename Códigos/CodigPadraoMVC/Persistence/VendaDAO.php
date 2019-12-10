@@ -50,15 +50,14 @@ class VendaDAO {
         $resultado = $connect->query($sql);
         return $resultado;
     }
-    function ConsultarIDVenda($connect) {
-        $sql = "SELECT idvend FROM vendas";
-        $res = $connect->query($sql);
-        return $res;
-    }
-    function ConsultarProduto($id, $connect) {
-        $sql = "SELECT nome FROM produtos WHERE id=".$id;
-        $res = $connect->query($sql);
-        return $res;
+
+    function joinVendaInfo($connect, $idVenda) {
+        $sql = "SELECT vendas.idvend, vendas.qntprod, clientes.nome as nomeCli, funcionarios.nome as nomeFund, produtos.nome as nomeProd FROM vendas 
+        INNER JOIN clientes ON clientes.cpf = vendas.idcliente 
+        INNER JOIN funcionarios ON funcionarios.cpf = vendas.idvendedor 
+        INNER JOIN produtos ON produtos.id = vendas.idproduto WHERE vendas.idvend=$idVenda";
+        $resultado = $connect->query($sql);
+        return $resultado;
     }
 
 }
