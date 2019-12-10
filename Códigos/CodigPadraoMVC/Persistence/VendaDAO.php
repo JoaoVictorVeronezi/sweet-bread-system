@@ -70,7 +70,19 @@ class VendaDAO {
         $resultado = $connect->query($sql);
         return $resultado;
     }
-    
+
+    function DeletarProduto($id, $connect) {
+        $venda = "DELETE FROM vendas WHERE idvend=".$id;
+        $resultado = $connect->query($venda); 
+        return $resultado;
+    }
+    function atualizarQtdProdutoDelete($idProd, $qntProd, $connect) {
+        $sql = " UPDATE produtos SET quantidade= quantidade + $qntProd WHERE id=".$idProd;
+        if($connect->query($sql)) {
+            return true;
+        }
+        return false;
+    }
 }
 
 ?>
