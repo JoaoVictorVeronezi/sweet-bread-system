@@ -66,12 +66,11 @@ class VendaDAO {
     }
     
     function AlterarVenda($idvend, $idprod, $connect){
-        
         $sql = "UPDATE vendas SET idproduto=$idprod WHERE idvend=".$idvend;
         $resultado = $connect->query($sql);
         return $resultado;
     }
-
+    
 }
 
 ?>
