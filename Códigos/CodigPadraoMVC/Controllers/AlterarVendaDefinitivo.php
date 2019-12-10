@@ -1,21 +1,20 @@
 <?php
 include_once '../Persistence/Connection.php';
-include_once '../Models/Produto.php';
-include_once '../Persistence/ProdutoDAO.php';
+include_once '../Models/Venda.php';
+include_once '../Persistence/VendaDAO.php';
 
-$nome = $_POST['prnome'];
-$quantidade = $_POST['prquanti'];
-$vendedor = $_POST['vendedor'];
-$cliente = $_POST['cliente'];
-$id = $_POST['idvend'];
+
+
+$quantidadeprod = $_POST['quantiprod'];
+$idvend = $_POST['idvend'];
+$idprod = $_POST['idprod'];
 
 $conexao = new Connection();
 $conexao = $conexao->getConnection();
 
-$p = new Produto($id, $nome, $marca, $quantidade, $preco);
 
-$produtodao = new ProdutoDAO();
-$resultado = $produtodao->AlterarProduto($p, $conexao);
+$vendadao = new VendaDAO();
+$resultado = $vendadao->AlterarVenda($idvend, $idprod,$conexao);
 
 if ($resultado == true) {
     echo "update feito com sucesso";

@@ -12,19 +12,20 @@ $conexao = $conexao->getConnection();
 
 $vendadao = new VendaDAO();
 
-$res = $vendadao->joinVendaInfo($conexao, $id);
+$res = $vendadao->joinVendaInfo($id, $conexao);
 //controller passivo de mudança
 
 if ($res->num_rows > 0) {
 $registro = $res->fetch_assoc();
 echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Consultar e Alterar</title></head>
 <body><h1>Consultar e Alterar</h1>
-<form action='../Controllers/AlterarProdutoDefinitivo.php' method='POST''>
-    ID: <input type='text'  name='prid' value='" . $registro['idvend'] . "'> <br><br>
-    Cliente: <input type='text' name='prnome' value='" . $registro['nomeCli'] ."'><br><br>
-    Marca: <input type='text' name='prmarca' value='" . $registro['nomeFund'] . "'><br><br>
-    Quantidade: <input type='text'  name='prquanti'  value='" . $registro['qntprod'] . "'> <br><br>
-    Preço: <input type='text'  name='prpreco'  value='" . $registro['nomeProd'] . "'> <br><br>
+<form action='../Controllers/AlterarVendaDefinitivo.php' method='POST''>
+    ID da Venda: <input type='text'  name='idvend' value='" . $registro['idvend'] . "'> <br><br>
+    Cliente: <input type='text' name='nomecli' value='" . $registro['nomeCli'] ."'><br><br>
+    Funcionario: <input type='text' name='nomefunc' value='" . $registro['nomeFund'] . "'><br><br>
+    Quantidade: <input type='text'  name='quantiprod'  value='" . $registro['qntprod'] . "'> <br><br>
+    ID do Produto: <input type='text'  name='idprod' value='" . $registro['idproduto'] . "'> <br><br>
+    Produto: <input type='text'  name='nomeprod'  value='" . $registro['nomeProd'] . "'> <br><br>
         <input type='hidden' value='inserir'/>
         <input type='submit' value='Alterar' name='cadastrar'/>
 </form>

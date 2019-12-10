@@ -6,7 +6,7 @@ class VendaDAO {
         //selecionar a qualidade para ver se ha a quantidade necessria
         $query = " SELECT quantidade FROM produtos WHERE id=".$idprod;
         $quantidade = $connect->query($query)->fetch_assoc()["quantidade"];
-        //var_dump($quantidade);
+    
         if ($qntProd >= $quantidade) {
             return false;
         }
@@ -50,12 +50,24 @@ class VendaDAO {
         $resultado = $connect->query($sql);
         return $resultado;
     }
+    function ConsultarIDVenda($connect) {
+        $sql = "SELECT idvend FROM vendas";
+        $res = $connect->query($sql);
+        return $res;
+    }
 
-    function joinVendaInfo($connect, $idVenda) {
-        $sql = "SELECT vendas.idvend, vendas.qntprod, clientes.nome as nomeCli, funcionarios.nome as nomeFund, produtos.nome as nomeProd FROM vendas 
+    function joinVendaInfo($idVenda, $connect) {
+        $sql = "SELECT vendas.idvend, vendas.qntprod, vendas.idproduto, clientes.nome as nomeCli, funcionarios.nome as nomeFund, produtos.nome as nomeProd FROM vendas 
         INNER JOIN clientes ON clientes.cpf = vendas.idcliente 
         INNER JOIN funcionarios ON funcionarios.cpf = vendas.idvendedor 
         INNER JOIN produtos ON produtos.id = vendas.idproduto WHERE vendas.idvend=$idVenda";
+        $resultado = $connect->query($sql);
+        return $resultado;
+    }
+    
+    function AlterarVenda($idvend, $idprod, $connect){
+        
+        $sql = "UPDATE vendas SET idproduto=$idprod WHERE idvend=".$idvend;
         $resultado = $connect->query($sql);
         return $resultado;
     }
